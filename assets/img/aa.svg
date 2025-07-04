@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 300 200">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #e75d24;
+      }
+
+      .st0, .st1 {
+        font-family: PlayfairDisplay-Black, 'Playfair Display';
+        font-size: 16px;
+        font-weight: 800;
+      }
+
+      .st2 {
+        fill: #e85d24;
+      }
+
+      .st3, .st1 {
+        fill: #942581;
+      }
+
+      .st4 {
+        letter-spacing: 0em;
+      }
+
+      .st5 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="st3" d="M211.3,21.9c-24.9,0-47,11.7-61.3,29.8,10.5,13.3,16.7,30,16.7,48.3s-6.3,35-16.7,48.3c14.3,18.1,36.4,29.8,61.3,29.8,43.1,0,78.1-35,78.1-78.1S254.5,21.9,211.3,21.9Z"/>
+    <text class="st0" transform="translate(174.5 95.9)"><tspan class="st5"><tspan x="0" y="0">Performance</tspan></tspan><tspan class="st4"><tspan x="0" y="18">Marketing</tspan></tspan></text>
+  </g>
+  <g>
+    <path class="st2" d="M150,51.7c-14.3-18.1-36.4-29.8-61.3-29.8C45.5,21.9,10.6,56.9,10.6,100s35,78.1,78.1,78.1,47-11.7,61.3-29.8c-10.5-13.3-16.7-30-16.7-48.3s6.3-35,16.7-48.3Z"/>
+    <text class="st1" transform="translate(22.2 95.9)"><tspan class="st5"><tspan x="0" y="0">Creative</tspan></tspan><tspan class="st4"><tspan x="0" y="18">Marketing</tspan></tspan></text>
+  </g>
+</svg>
