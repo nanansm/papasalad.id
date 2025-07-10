@@ -506,7 +506,7 @@ body {
 .copyright-top p {
   font-size: 12px;
   margin: 10px 0 0 0;
-  color: #000;
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -547,7 +547,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   position: fixed;
-  margin-top: 10vh;
+  margin-top: 5vh;
   width: 50px;
   height: 50px;
   right: 8%;
@@ -562,7 +562,7 @@ nav .container {
   position: fixed;
   margin-top: 10vh;
   width: 50px;
-  height: 50px;
+  height: 20px;
   left: 8%;
   z-index: 99 !important;
 }
@@ -886,9 +886,9 @@ a {
   font-family: 'Red Hat Display', sans-serif;
   text-transform: uppercase;
   color: transparent;
-  font-weight: 900;
+  font-weight: 400;
   font-size: 60px;
-  -webkit-text-stroke: 1px #000;
+  -webkit-text-stroke: 1px #ffffff;
   letter-spacing: 1px;
 }
 
@@ -909,9 +909,9 @@ a {
 .heading-text-back h1 {
   font-family: 'Red Hat Display', sans-serif;
   text-transform: uppercase;
-  color: #000;
-  font-weight: 900;
-  font-size: 60px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 80px;
   -webkit-text-stroke: 0px #000;
   letter-spacing: 1px;
 }
@@ -921,7 +921,7 @@ a {
   height: 100vh;
   overflow: hidden;
   z-index: -1;
-  background: #F5A91B;
+  background: #6ca515;
 }
 
 .main-head .container {
@@ -1148,7 +1148,7 @@ h1.title {
 .footer {
   z-index: -2;
   padding: 0 0 50px 0;
-  background-color: #F5A91B ;
+  background-color: #6ca515 ;
 }
 
 .footer a {
@@ -1188,7 +1188,7 @@ h1.title {
   line-height: normal;
   font-size: 12px;
   margin: 5px 0 0 0;
-  color: #5c5c5c;
+  color: #ffffff;
 }
 
 /* ==================================================
@@ -1849,8 +1849,8 @@ h3.lght {
 
 .service-box {
   background-color: #E75D24; /* Default background color */
-  padding: 18px;
-  border-radius: 16px;
+  padding: 8px;
+  border-radius: 50px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   color: white;
