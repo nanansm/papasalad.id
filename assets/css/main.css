@@ -1814,9 +1814,9 @@ h3.lght {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 28px;
-  padding: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0px;
+  padding: 12px;
   width: 100%;
   max-width: 1200px;
   box-sizing: border-box;
@@ -1825,7 +1825,7 @@ h3.lght {
   /*background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;*/
-  padding: 24px;
+  padding: 0px;
   text-align: center;
   /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
 }
@@ -1836,13 +1836,13 @@ h3.lght {
 
 @media (max-width: 768px) {
   .grid-container {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
   .grid-container {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       padding: 0px;
   }
 }
