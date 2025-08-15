@@ -55,20 +55,13 @@
         <div class="ps-head" style="margin-top:16px">
           <h3>Data Pemesan</h3>
         </div>
-        <div class="row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div>
-            <label class="ps-note">Metode</label>
-            <select id="method">
-              <option>Pickup</option>
-              <option>Delivery</option>
-            </select>
-          </div>
+        <div class="row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;padding: 15px;">
           <div>
             <label class="ps-note">Nama</label>
-            <input id="custName" placeholder="Nama pemesan">
+            <input id="custName" placeholder="Nama Kamu">
           </div>
           <div>
-            <label class="ps-note">HP</label>
+            <label class="ps-note">No WhatsApp</label>
             <input id="custPhone" placeholder="08xxxxxxxxxx">
           </div>
           <div style="grid-column:1/-1">
@@ -181,7 +174,6 @@
     const ids = Object.keys(cart.items);
     if (!ids.length){ alert('Keranjang kosong'); return; }
 
-    const method = document.querySelector('#method')?.value || 'Pickup';
     const name   = (document.querySelector('#custName') ?.value || '').trim() || '-';
     const phone  = (document.querySelector('#custPhone')?.value || '').trim() || '-';
     const notes  = (document.querySelector('#notes')    ?.value || '').trim() || '-';
@@ -196,9 +188,8 @@
 
     const text = `Halo PapaSalad! Saya mau pesan:%0A%0A${rows.join('%0A')}` +
                  `%0A%0ASubtotal: ${idr(sub)}` +
-                 `%0A%0AMetode: ${encodeURIComponent(method)}` +
                  `%0ANama: ${encodeURIComponent(name)}` +
-                 `%0AHP: ${encodeURIComponent(phone)}` +
+                 `%0AWhatsapp: ${encodeURIComponent(phone)}` +
                  `%0AAlamat/Catatan: ${encodeURIComponent(notes)}` +
                  `%0A%0ATerima kasih!`;
 
