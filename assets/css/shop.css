@@ -1,0 +1,37 @@
+/* PapaSalad Shop Layer – minimal on top of template CSS */
+:root{
+  --ps-ink:#1f2021;
+  --ps-accent:#f6b96a; /* honey */
+  --ps-ink-2:#11324e;
+}
+section.ps-shop{padding:80px 0}
+.ps-shop .ps-head{margin-bottom:28px}
+.ps-shop .ps-head h2{font-weight:900;letter-spacing:.4px}
+.ps-products{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
+.ps-card{border:1px solid #eee;border-radius:16px;background:#fff;overflow:hidden;display:flex;flex-direction:column;transition:transform .12s ease}
+.ps-card:hover{transform:translateY(-2px)}
+.ps-thumb{aspect-ratio:4/3;background:#f8f8f8;display:grid;place-items:center;color:#8a8a8a;font-weight:700}
+.ps-body{padding:14px}
+.ps-name{font-size:18px;margin:0 0 6px}
+.ps-price{color:var(--ps-ink-2);font-weight:800}
+.ps-actions{padding:14px;display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+.ps-btn{appearance:none;border:none;border-radius:12px;background:var(--ps-accent);color:#000;font-weight:800;padding:10px 14px;cursor:pointer}
+.ps-btn.ghost{background:#fff;border:1px solid #ddd}
+.ps-badge{display:inline-flex;align-items:center;gap:6px}
+.ps-badge .count{background:var(--ps-accent);border-radius:999px;padding:2px 8px;font-weight:800}
+/* Cart page */
+.ps-cart{display:grid;gap:10px}
+.ps-row{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;border-bottom:1px dashed #eee;padding:10px 0}
+.ps-qty{display:flex;align-items:center;gap:6px}
+.ps-qty button{width:28px;height:28px;border:1px solid #ddd;background:#fff;border-radius:8px;cursor:pointer}
+.ps-summary{margin-top:12px;border:1px solid #eee;border-radius:16px;padding:16px}
+.ps-summary .row{display:flex;justify-content:space-between;margin:6px 0}
+.ps-note{color:#666;font-size:13px}
+
+.ps-thumb { aspect-ratio: 4 / 3; background: #f8f8f8; overflow: hidden; }
+.ps-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+input,textarea,select{border-radius:10px;border:1px solid #ddd;padding:10px;width:100%;font:inherit}
+@media (max-width:768px){
+  section.ps-shop{padding:54px 0}
+}

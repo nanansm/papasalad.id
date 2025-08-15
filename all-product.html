@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All Products – PapaSalad</title>
+  <!-- template css -->
+  <link rel="stylesheet" href="assets/css/plugin.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="icon" type="image/x-icon" href="assets/img/aa.svg">
+  <!-- shop layer -->
+  <link rel="stylesheet" href="assets/css/shop.css">
+</head>
+
+
+<body data-cursor="true">
+  <!-- Header template minimal -->
+  <header>
+    <nav>
+      <div class="logo hover-target">
+        <a class="load-spiral" href="index.html"><img src="assets/img/logo.png" alt="logo" style="max-width:200%;height:auto;"></a>
+      </div>
+      <div class="scr socials">
+        <div class="list-social">
+          <ul>
+            <li class="hover-target"><a href="cart.html" class="ps-badge">Keranjang <span id="cartCount" class="count">0</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-nav"></div>
+    </nav>
+  </header>
+
+  <main id="spiral">
+    <section class="ps-shop">
+      <div class="container">
+        <div class="ps-head">
+          <h2>Semua Produk</h2>
+          <p class="ps-note">Klik “Add to cart” untuk menambahkan ke keranjang.</p>
+        </div>
+        <div id="psProducts" class="ps-products"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- template js -->
+  <script src="assets/js/plugin.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- shop js -->
+  <script type="module">
+    import { bindAddToCart, updateBadge, idr } from './assets/js/shop-cart.js';
+
+    // Daftar produk – sesuaikan dengan menu PapaSalad
+    const PRODUCTS = [
+  { id:'tortila', name:'Tortila Style Papa Salad', price:20000, img:'assets/img/product/tortilastylesalad.webp' },
+  { id:'cesar',   name:'Cesar Salad',              price:25000, img:'assets/img/product/cesarsalad.webp' },
+  { id:'thai',    name:'Thai Chicken Salad',       price:28000, img:'assets/img/product/thaichickensalad.webp' },
+  { id:'smoked',  name:'Smoked Beef Salad',        price:28000, img:'assets/img/product/smokedbeefsalad.webp' },
+  { id:'fruit',   name:'Salad Fruit Honey Berry',  price:28000, img:'assets/img/product/fruithoneyberry.webp' },
+  { id:'grilled', name:'Grilled Chicken Salad',    price:30000, img:'assets/img/product/grilledchickensalad.webp' },
+];
+
+
+    function render(){
+  const grid = document.querySelector('#psProducts');
+  grid.innerHTML = PRODUCTS.map(p => `
+    <div class="ps-card">
+      <div class="ps-thumb">
+        <img src="${p.img}" alt="${p.name}" loading="lazy" />
+      </div>
+      <div class="ps-body">
+        <h3 class="ps-name">${p.name}</h3>
+        <div class="ps-price">${PS.idr ? PS.idr(p.price) : idr(p.price)}</div>
+      </div>
+      <div class="ps-actions">
+        <button class="ps-btn" data-add-cart data-id="${p.id}" data-name="${p.name}" data-price="${p.price}">Add to cart</button>
+        <a href="cart.html" class="ps-btn ghost">Lihat Cart</a>
+      </div>
+    </div>
+  `).join('');
+}
+
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+      render();
+      bindAddToCart();
+      updateBadge('#cartCount');
+    });
+  </script>
+</body>
+</html>

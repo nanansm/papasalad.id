@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Cart – PapaSalad</title>
+  <!-- template css -->
+  <link rel="stylesheet" href="assets/css/plugin.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <!-- shop layer -->
+  <link rel="stylesheet" href="assets/css/shop.css">
+</head>
+<body data-cursor="true">
+  <header>
+    <nav>
+      <div class="logo hover-target">
+        <a class="load-spiral" href="index.html"><img src="assets/img/logo.png" alt="logo" style="max-width:200%;height:auto;"></a>
+      </div>
+      <div class="scr socials">
+        <div class="list-social">
+          <ul>
+            <li class="hover-target"><a href="cart.html" class="ps-badge">Keranjang <span id="cartCount" class="count">0</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-nav"></div>
+    </nav>
+  </header>
+
+  <main id="spiral">
+    <section class="ps-shop">
+      <div class="container">
+        <div class="ps-head">
+          <h2>Keranjang</h2>
+          <p class="ps-note">Periksa pesanan Anda, isi data, lalu lanjut ke WhatsApp.</p>
+        </div>
+
+        <div id="cartBox" class="ps-cart"></div>
+
+        <div class="ps-summary">
+          <div class="row"><span>Subtotal</span><strong id="subtotal">Rp0</strong></div>
+          <div class="row"><span>Total</span><strong id="total">Rp0</strong></div>
+        </div>
+
+        <div class="ps-head" style="margin-top:16px">
+          <h3>Data Pemesan</h3>
+        </div>
+        <div class="row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div>
+            <label class="ps-note">Metode</label>
+            <select id="method">
+              <option>Pickup</option>
+              <option>Delivery</option>
+            </select>
+          </div>
+          <div>
+            <label class="ps-note">Nama</label>
+            <input id="custName" placeholder="Nama pemesan">
+          </div>
+          <div>
+            <label class="ps-note">HP</label>
+            <input id="custPhone" placeholder="08xxxxxxxxxx">
+          </div>
+          <div style="grid-column:1/-1">
+            <label class="ps-note">Alamat/Catatan</label>
+            <textarea id="notes" rows="3" placeholder="Alamat lengkap / catatan pesanan"></textarea>
+          </div>
+        </div>
+
+        <button id="checkout" class="ps-btn" style="margin-top:16px">Checkout via WhatsApp</button>
+        <p class="ps-note" style="margin-top:8px">Nomor WhatsApp & Google Sheet endpoint disetel di skrip halaman ini.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- template js -->
+  <script src="assets/js/plugin.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- shop js -->
+  <script type="module">
+    import { buildCartUI, bindCartControls, checkoutWA, updateBadge } from './assets/js/shop-cart.js';
+
+    const WA_NUMBER = "6285117567544"; // GANTI: nomor WhatsApp bisnis (tanpa +)
+    const SHEET_URL = ""; // Opsional: Apps Script Web App URL untuk log order ke Google Sheet
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+      buildCartUI('#cartBox');
+      bindCartControls('#cartBox');
+      updateBadge('#cartCount');
+
+      document.querySelector('#checkout').addEventListener('click', ()=>{
+        checkoutWA({ waNumber: WA_NUMBER, sheetUrl: SHEET_URL, methodSel:'#method', nameSel:'#custName', phoneSel:'#custPhone', notesSel:'#notes' });
+      });
+    });
+  </script>
+</body>
+</html>
