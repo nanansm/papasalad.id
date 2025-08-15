@@ -1844,6 +1844,7 @@ h3.lght {
   .grid-container {
       grid-template-columns: repeat(2, 1fr);
       padding: 0px;
+      
   }
 }
 
