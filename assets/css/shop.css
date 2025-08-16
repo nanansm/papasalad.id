@@ -20,6 +20,80 @@ section.ps-shop{padding:80px 0}
   }
 }
 
+/* Kartu Produk Baru */
+.product-card {
+  background-color: #ffffff;
+  border-radius: 24px; /* Sudut lebih tumpul */
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Kontainer Gambar */
+.product-image-container {
+  position: relative;
+  background-color: #e4f0d6; /* Warna latar belakang hijau muda */
+  padding: 20px;
+  border-radius: 24px 24px 0 0;
+}
+
+.product-image-container img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 16px; /* Sudut gambar lebih tumpul */
+}
+
+/* Label Harga */
+.product-price {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  backdrop-filter: blur(5px);
+}
+
+/* Info Produk (Nama & Tombol Order) */
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2021;
+  margin: 0;
+}
+
+.product-order {
+  color: #6ca515; /* Warna hijau khas PapaSalad */
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.product-order:hover {
+  color: #4a7709;
+}
+
 .ps-card{border:1px solid #eee;border-radius:16px;background:#fff;overflow:hidden;display:flex;flex-direction:column;transition:transform .12s ease}
 .ps-card:hover{transform:translateY(-2px)}
 .ps-thumb{aspect-ratio:4/3;background:#f8f8f8;display:grid;place-items:center;color:#8a8a8a;font-weight:700}
@@ -29,7 +103,7 @@ section.ps-shop{padding:80px 0}
 .ps-name{font-size:14px;margin:0 0 6px}
 .ps-price{color:var(--ps-ink-2);font-weight:800}
 .ps-actions{padding:14px;display:flex;justify-content:space-between;align-items:center;margin-top:auto}
-.ps-btn{appearance:none;border:none;border-radius:12px;background:var(--ps-accent);color:#000;font-weight:400;padding:10px 14px;cursor:pointer}
+.ps-btn{appearance:none;border:none;border-radius:12px;background:#6ca515;color:#000;font-weight:400;padding:10px 14px;}
 .ps-btn.ghost{background:#fff;border:1px solid #ddd}
 .ps-badge{display:inline-flex;align-items:center;gap:6px}
 .ps-badge .count{background:var(--ps-accent);border-radius:999px;padding:2px 8px;font-weight:800}
@@ -38,7 +112,7 @@ section.ps-shop{padding:80px 0}
 .ps-cart-shop{padding:0px 14px 10px 14px;display:flex;justify-content:space-between;align-items:center}
 .ps-row{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;border-bottom:1px dashed #eee;padding:10px 0}
 .ps-qty{display:flex;align-items:center;gap:6px}
-.ps-qty button{width:28px;height:28px;border:1px solid #ddd;background:#fff;border-radius:8px;cursor:pointer}
+.ps-qty button{width:28px;height:28px;border:1px solid #ddd;background:#fff;border-radius:8px;}
 .ps-summary{margin-top:12px;border:1px solid #eee;border-radius:16px;padding:16px}
 .ps-summary .row{display:flex;justify-content:space-between;margin:6px 0}
 .ps-note{color:#666;font-size:13px}

@@ -688,7 +688,7 @@ a.menu-link.active {
 }
 
 .toggle-btn:hover {
-  cursor: pointer;
+  
 }
 
 .address-menu h3 {
@@ -1541,7 +1541,7 @@ h3.detail-title {
   height: 50px;
   width: 50px;
   outline: none;
-  cursor: pointer;
+  
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1639,7 +1639,7 @@ h3.detail-title {
   font-size: 15px;
   margin-bottom: 1rem;
   color: #fff;
-  cursor: pointer;
+  
 }
 
 .menus a:hover {
