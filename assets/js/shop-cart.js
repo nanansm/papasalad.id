@@ -110,11 +110,14 @@ export function bindCartControls(rootSel='#cartBox'){
 }
 
 // WhatsApp checkout + optional Google Sheet
-export async function checkoutWA({waNumber, sheetUrl, methodSel='#method', nameSel='#custName', phoneSel='#custPhone', notesSel='#notes'}){
+export async function checkoutWA({
+  waNumber, sheetUrl, token,
+  methodSel='#method', nameSel='#custName', phoneSel='#custPhone', notesSel='#notes'
+}){
   const c=readCart(); const ids=Object.keys(c.items);
   if(!ids.length){ alert('Keranjang kosong'); return; }
 
-  // Validasi wajib isi (kalau field ada di halaman)
+  // Validasi (kalau field ada di halaman)
   const nameEl  = document.querySelector(nameSel);
   const phoneEl = document.querySelector(phoneSel);
   const notesEl = document.querySelector(notesSel);
@@ -125,7 +128,7 @@ export async function checkoutWA({waNumber, sheetUrl, methodSel='#method', nameS
   if (phoneEl && !phone) { alert('Harap isi No WhatsApp.'); return; }
   if (notesEl && !notes) { alert('Harap isi Alamat/Catatan.'); return; }
 
-  const method = document.querySelector(methodSel)?.value || 'Pickup';
+  const method = document.querySelector(methodSel)?.value || 'Delivery';
 
   let rows=[]; let sub=0; const items=[];
   ids.forEach(id=>{
@@ -135,7 +138,7 @@ export async function checkoutWA({waNumber, sheetUrl, methodSel='#method', nameS
     items.push({ id, name: meta.name, qty: q, price: meta.price||0 });
   });
 
-  const text = `Halo PapaSalad! Saya mau pesan:%0A%0A${rows.join('%0A')}`
+  const text = `Halo Papa! Saya mau pesan:%0A%0A${rows.join('%0A')}`
              + `%0A%0ASubtotal: ${idr(sub)}`
              + `%0A%0AMetode: ${encodeURIComponent(method)}`
              + `%0ANama: ${encodeURIComponent(name || '-')}`
@@ -144,18 +147,17 @@ export async function checkoutWA({waNumber, sheetUrl, methodSel='#method', nameS
              + `%0A%0ATerima kasih!`;
   const waUrl = `https://wa.me/${waNumber}?text=${text}`;
 
-  // 1) Buka WA SEGERA (supaya tidak diblokir popup)
+  // 1) Buka WA dulu (biar tidak diblokir popup)
   const waWin = window.open(waUrl, '_blank');
   if (!waWin) window.location.href = waUrl;
 
   // 2) Logging ke Sheet: non-blocking
   if (sheetUrl){
     const payload = {
-      ts: new Date().toISOString(),
-      name: name || '-', phone: phone || '-', notes: notes || '-', method,
+      token, // <— kirim token di sini
+      name, phone, notes, method,
       items, subtotal: sub,
       meta: { ua: navigator.userAgent, ref: document.referrer }
-      // token: '...jika pakai verifikasi di Apps Script'
     };
     try{
       if (navigator.sendBeacon){
@@ -167,3 +169,4 @@ export async function checkoutWA({waNumber, sheetUrl, methodSel='#method', nameS
     }catch(e){ console.warn('Sheet logging failed:', e); }
   }
 }
+

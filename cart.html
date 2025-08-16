@@ -60,30 +60,33 @@
   <script src="assets/js/main.js"></script>
 
   <script type="module">
-    import { buildCartUI, bindCartControls, updateBadge, checkoutWA } from './assets/js/shop-cart.js';
+  import { buildCartUI, bindCartControls, updateBadge, checkoutWA } from './assets/js/shop-cart.js';
 
-    const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxc1kDNXJFwJ5RbOAf_IvS2SBTVrNTDCuWr1Xn44Y4L-7q0weiczTSu5zjEpief70-1gg/exec';
-    const WA_NUMBER = '6285117567544';
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxc1kDNXJFwJ5RbOAf_IvS2SBTVrNTDCuWr1Xn44Y4L-7q0weiczTSu5zjEpief70-1gg/exec';
+  const WA_NUMBER = '6285117567544';
+  const TOKEN = 'AKfycbxc1kDNXJFwJ5RbOAf_IvS2SBTVrNTDCuWr1Xn44Y4L-7q0weiczTSu5zjEpief70-1gg'; // <= tambahkan ini
 
-    document.addEventListener('DOMContentLoaded', ()=>{
-      buildCartUI('#cartBox');
-      bindCartControls('#cartBox');
-      updateBadge('#cartCount'); // kalau tidak ada elemen, ini no-op dan aman
+  document.addEventListener('DOMContentLoaded', ()=>{
+    buildCartUI('#cartBox');
+    bindCartControls('#cartBox');
+    updateBadge('#cartCount');
 
-      document.querySelector('#checkout')?.addEventListener('click', (ev)=>{
-        ev.preventDefault();
+    document.querySelector('#checkout')?.addEventListener('click', (ev)=>{
+      ev.preventDefault();
 
-        // Validasi wajib isi (agar tidak "-" ke WA)
-        const name  = (document.querySelector('#custName') ?.value || '').trim();
-        const phone = (document.querySelector('#custPhone')?.value || '').trim();
-        const notes = (document.querySelector('#notes')    ?.value || '').trim();
-        if (!name)  { alert('Harap isi Nama.'); return; }
-        if (!phone) { alert('Harap isi No WhatsApp.'); return; }
-        if (!notes) { alert('Harap isi Alamat/Catatan.'); return; }
+      // Validasi cepat
+      const name  = (document.querySelector('#custName') ?.value || '').trim();
+      const phone = (document.querySelector('#custPhone')?.value || '').trim();
+      const notes = (document.querySelector('#notes')    ?.value || '').trim();
+      if (!name)  { alert('Harap isi Nama.'); return; }
+      if (!phone) { alert('Harap isi No WhatsApp.'); return; }
+      if (!notes) { alert('Harap isi Alamat/Catatan.'); return; }
 
-        checkoutWA({ waNumber: WA_NUMBER, sheetUrl: SHEET_URL });
-      });
+      // Kirim token ke checkoutWA (agar doPost bisa verifikasi bila perlu)
+      checkoutWA({ waNumber: WA_NUMBER, sheetUrl: SHEET_URL, token: TOKEN });
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
