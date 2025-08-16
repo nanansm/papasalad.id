@@ -78,34 +78,91 @@
   <script src="assets/js/plugin.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <script type="module">
-  import { buildCartUI, bindCartControls, updateBadge, checkoutWA } from './assets/js/shop-cart.js';
 
-  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxc1kDNXJFwJ5RbOAf_IvS2SBTVrNTDCuWr1Xn44Y4L-7q0weiczTSu5zjEpief70-1gg/exec';
+<script>
+  // ====== SETTING ======
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw17GJwf-UU4yBtCrI_HzQ8lxFTbco7NIcNTv71aQTI9Begf8QPe0r_pA1v5Dq7zK-v/exec';
   const WA_NUMBER = '6285117567544';
-  const TOKEN = 'PAPASALAD_SECRET_123';
+
+  // ====== CART helpers ======
+  const CART_KEY = 'papasalad_cart_v1';
+  const readCart = () => {
+    try { return JSON.parse(localStorage.getItem(CART_KEY) || '{}'); }
+    catch(_) { return {}; }
+  };
+  const idr = n => 'Rp ' + (Number(n)||0).toLocaleString('id-ID');
+
+  function handleCheckout(){
+    const cart = readCart();
+    const items = cart.items || {};
+    const catalog = cart.catalog || {};
+    const ids = Object.keys(items);
+    if (!ids.length) { alert('Keranjang kosong'); return; }
+
+    const name  = (document.querySelector('#custName') ?.value || '').trim();
+    const phone = (document.querySelector('#custPhone')?.value || '').trim();
+    const notes = (document.querySelector('#notes')    ?.value || '').trim();
+    if (!name)  { alert('Harap isi Nama.'); return; }
+    if (!phone) { alert('Harap isi No WhatsApp.'); return; }
+    if (!notes) { alert('Harap isi Alamat/Catatan.'); return; }
+
+    // Build ringkasan & payload
+    let rows = [], subtotal = 0, payloadItems = [];
+    ids.forEach(id=>{
+      const q = items[id];
+      const meta = catalog[id] || { name:id, price:0 };
+      const price = Number(meta.price)||0;
+      const line = q*price; subtotal += line;
+      rows.push(`• ${meta.name} x${q} @ ${idr(price)} = ${idr(line)}`);
+      payloadItems.push({ id, name: meta.name, qty:q, price });
+    });
+
+    const method = 'Delivery';
+
+    // 1) Buka WhatsApp dulu (anti popup-block)
+    const text = `Halo PapaSalad! Saya mau pesan:%0A%0A${rows.join('%0A')}`
+               + `%0A%0ASubtotal: ${idr(subtotal)}`
+               + `%0A%0AMetode: ${encodeURIComponent(method)}`
+               + `%0ANama: ${encodeURIComponent(name)}`
+               + `%0AHP: ${encodeURIComponent(phone)}`
+               + `%0AAlamat/Catatan: ${encodeURIComponent(notes)}`
+               + `%0A%0ATerima kasih!`;
+    const waUrl = `https://wa.me/${WA_NUMBER}?text=${text}`;
+    const win = window.open(waUrl, '_blank');
+    if (!win) window.location.href = waUrl;
+
+    // 2) Log ke Google Sheet — non-blocking, aman di mobile
+    const payload = {
+      name, phone, notes, method,
+      items: payloadItems,
+      subtotal,
+      meta: { ua: navigator.userAgent, ref: document.referrer }
+    };
+
+    try {
+      // Pakai fetch no-cors + keepalive (tidak preflight)
+      fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        // sengaja pakai text/plain agar tidak memicu preflight CORS
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      });
+    } catch (err) {
+      console.warn('Gagal kirim ke Sheet:', err);
+    }
+  }
 
   document.addEventListener('DOMContentLoaded', ()=>{
-    buildCartUI('#cartBox');
-    bindCartControls('#cartBox');
-    updateBadge('#cartCount');
-
-    document.querySelector('#checkout')?.addEventListener('click', (ev)=>{
-      ev.preventDefault();
-
-      // Validasi cepat
-      const name  = (document.querySelector('#custName') ?.value || '').trim();
-      const phone = (document.querySelector('#custPhone')?.value || '').trim();
-      const notes = (document.querySelector('#notes')    ?.value || '').trim();
-      if (!name)  { alert('Harap isi Nama.'); return; }
-      if (!phone) { alert('Harap isi No WhatsApp.'); return; }
-      if (!notes) { alert('Harap isi Alamat/Catatan.'); return; }
-
-      // Kirim token ke checkoutWA (agar doPost bisa verifikasi bila perlu)
-      checkoutWA({ waNumber: WA_NUMBER, sheetUrl: SHEET_URL, token: TOKEN });
+    document.querySelector('#checkout')?.addEventListener('click', (e)=>{
+      e.preventDefault();
+      handleCheckout();
     });
   });
 </script>
+
+
 
 </body>
 </html>
