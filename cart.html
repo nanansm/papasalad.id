@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lagi Belanja di PapaSalad</title>
+
   <!-- template css -->
   <link rel="stylesheet" href="assets/css/plugin.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
+
   <!-- shop layer -->
   <link rel="stylesheet" href="assets/css/shop.css">
 </head>
-<body data-cursor="true">
-
-  
+<body>
 
   <main>
     <section class="ps-shop">
@@ -48,9 +48,8 @@
 
         <button id="checkout" class="ps-btn" style="margin-top:16px">Checkout via WhatsApp</button>
         <p class="ps-note" style="margin-top:20px">
-            Harga tersebut belum termasuk Biaya Ongkir ya Nak!
-            <br>
-            <b>Cek Lagi ya biar Papa gak salah kirim ke alamat Kamu!</b>
+          Harga tersebut belum termasuk Biaya Ongkir ya Nak!
+          <br><b>Cek Lagi ya biar Papa gak salah kirim ke alamat Kamu!</b>
         </p>
       </div>
     </section>
@@ -60,164 +59,31 @@
   <script src="assets/js/plugin.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <script>
-  /* ================= PapaSalad Cart Page ================= */
-  const CART_KEY  = 'papasalad_cart_v1';
-  const WA_NUMBER = '6285117567544'; // nomor WA bisnis (tanpa +)
-  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxc1kDNXJFwJ5RbOAf_IvS2SBTVrNTDCuWr1Xn44Y4L-7q0weiczTSu5zjEpief70-1gg/exec';
-  const TOKEN     = 'AKfycbxc1kDNXJFwJ5RbOAf_IvS2SBTVrNTDCuWr1Xn44Y4L-7q0weiczTSu5zjEpief70-1gg';
+  <script type="module">
+    import { buildCartUI, bindCartControls, updateBadge, checkoutWA } from './assets/js/shop-cart.js';
 
-  /* Helpers */
-  const shape = c => { c = c && typeof c==='object' ? c : {}; c.items=c.items||{}; c.catalog=c.catalog||{}; return c; };
-  const read  = () => { try { return shape(JSON.parse(localStorage.getItem(CART_KEY)||'{}')); } catch(_) { return shape({}); } };
-  const write = c => localStorage.setItem(CART_KEY, JSON.stringify(shape(c)));
-  const idr   = n => 'Rp ' + (Number(n)||0).toLocaleString('id-ID');
-  const countItems = () => Object.values(read().items).reduce((a,b)=>a+b,0);
-  const updateBadge = () => { const el=document.querySelector('#cartCount'); if(el) el.textContent = countItems(); };
+    const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxc1kDNXJFwJ5RbOAf_IvS2SBTVrNTDCuWr1Xn44Y4L-7q0weiczTSu5zjEpief70-1gg/exec';
+    const WA_NUMBER = '6285117567544';
 
-  /* Render Cart */
-  function buildCartUI(){
-    const root = document.querySelector('#cartBox');
-    const subEl = document.querySelector('#subtotal');
-    const totEl = document.querySelector('#total');
-    const cart = read();
+    document.addEventListener('DOMContentLoaded', ()=>{
+      buildCartUI('#cartBox');
+      bindCartControls('#cartBox');
+      updateBadge('#cartCount'); // kalau tidak ada elemen, ini no-op dan aman
 
-    root.innerHTML = '';
-    let subtotal = 0;
-    const ids = Object.keys(cart.items);
+      document.querySelector('#checkout')?.addEventListener('click', (ev)=>{
+        ev.preventDefault();
 
-    if (!ids.length){
-      root.innerHTML = '<div class="ps-note">Keranjang kosong. <a href="all-product.html">Belanja sekarang</a></div>';
-      if (subEl) subEl.textContent = idr(0);
-      if (totEl) totEl.textContent = idr(0);
-      updateBadge();
-      return;
-    }
+        // Validasi wajib isi (agar tidak "-" ke WA)
+        const name  = (document.querySelector('#custName') ?.value || '').trim();
+        const phone = (document.querySelector('#custPhone')?.value || '').trim();
+        const notes = (document.querySelector('#notes')    ?.value || '').trim();
+        if (!name)  { alert('Harap isi Nama.'); return; }
+        if (!phone) { alert('Harap isi No WhatsApp.'); return; }
+        if (!notes) { alert('Harap isi Alamat/Catatan.'); return; }
 
-    ids.forEach(id=>{
-      const qty  = cart.items[id];
-      const meta = cart.catalog[id] || {name:id, price:0};
-      const line = qty * (meta.price||0);
-      subtotal += line;
-
-      const row = document.createElement('div');
-      row.className = 'ps-row';
-      row.innerHTML = `
-        <div>
-          <strong>${meta.name}</strong>
-          <div class="ps-note">${idr(meta.price)} × <span class="q">${qty}</span></div>
-        </div>
-        <div class="ps-qty">
-          <button class="dec" data-id="${id}">−</button>
-          <input class="qval" type="number" min="1" value="${qty}" data-id="${id}" style="width:60px;text-align:center">
-          <button class="inc" data-id="${id}">+</button>
-        </div>
-        <div style="text-align:right">
-          <div>${idr(line)}</div>
-          <button class="ps-btn ghost rm" data-id="${id}" style="margin-top:6px">Hapus</button>
-        </div>`;
-      root.appendChild(row);
+        checkoutWA({ waNumber: WA_NUMBER, sheetUrl: SHEET_URL });
+      });
     });
-
-    if (subEl) subEl.textContent = idr(subtotal);
-    if (totEl) totEl.textContent = idr(subtotal);
-    updateBadge();
-  }
-
-  /* Qty +/−, hapus, input manual */
-  document.addEventListener('click', (e)=>{
-    const inc = e.target.closest('.inc')?.dataset.id;
-    const dec = e.target.closest('.dec')?.dataset.id;
-    const rm  = e.target.closest('.rm') ?.dataset.id;
-    if(!inc && !dec && !rm) return;
-
-    const cart = read();
-    if (inc) cart.items[inc] = (cart.items[inc]||1) + 1;
-    if (dec) cart.items[dec] = Math.max(1, (cart.items[dec]||1) - 1);
-    if (rm)  delete cart.items[rm];
-
-    write(cart);
-    buildCartUI();
-  });
-
-  document.addEventListener('change', (e)=>{
-    const inp = e.target.closest('.qval'); if(!inp) return;
-    const id = inp.dataset.id; let v = parseInt(inp.value,10);
-    if(!Number.isFinite(v) || v < 1) v = 1;
-    const cart = read(); cart.items[id] = v; write(cart);
-    buildCartUI();
-  });
-
-  /* Checkout → Google Sheet → WhatsApp */
-  async function checkoutWA(){
-    const cart = read();
-    const ids = Object.keys(cart.items);
-    if (!ids.length){ alert('Keranjang kosong'); return; }
-
-    const name  = (document.querySelector('#custName') ?.value || '').trim();
-    const phone = (document.querySelector('#custPhone')?.value || '').trim();
-    const notes = (document.querySelector('#notes')    ?.value || '').trim();
-
-    if (!name){  alert('Harap isi Nama terlebih dahulu.'); return; }
-    if (!phone){ alert('Harap isi No WhatsApp terlebih dahulu.'); return; }
-    if (!notes){ alert('Harap isi Alamat/Catatan terlebih dahulu.'); return; }
-
-    // items & subtotal
-    let rows = []; let sub = 0; const items = [];
-    ids.forEach(id=>{
-      const q = cart.items[id];
-      const m = cart.catalog[id] || {name:id, price:0};
-      const price = Number(m.price)||0;
-      const line  = q * price; sub += line;
-      rows.push(`• ${m.name} x${q} @ ${idr(price)} = ${idr(line)}`);
-      items.push({ id, name: m.name, qty: q, price });
-    });
-
-    // payload utk Apps Script
-    const payload = {
-      token: TOKEN,
-      name, phone, notes,
-      method: 'Web',
-      items, subtotal: sub,
-      meta: { ua: navigator.userAgent, ref: document.referrer }
-    };
-
-    // kirim ke Sheet (kalau gagal, tetap lanjut WA)
-    try{
-  await fetch(SHEET_URL, {
-    method: 'POST',
-    mode: 'no-cors',        // <— penting utk bypass preflight
-    cache: 'no-cache',
-    redirect: 'follow',
-    // JANGAN kirim header application/json agar tidak memicu preflight
-    body: JSON.stringify(payload)
-  });
-} catch(err){
-  console.warn('Logging ke Sheet gagal:', err);
-}
-
-
-    // buka WhatsApp
-    const text = `Halo PapaSalad! Saya mau pesan:%0A%0A${rows.join('%0A')}`
-               + `%0A%0ASubtotal: ${idr(sub)}`
-               + `%0A%0ANama: ${encodeURIComponent(name)}`
-               + `%0AWhatsapp: ${encodeURIComponent(phone)}`
-               + `%0AAlamat/Catatan: ${encodeURIComponent(notes)}`
-               + `%0A%0ATerima kasih!`;
-    const url = `https://wa.me/${WA_NUMBER}?text=${text}`;
-    window.open(url, '_blank');
-
-    // (opsional) kosongkan cart setelah checkout
-    // localStorage.removeItem(CART_KEY);
-    // buildCartUI(); updateBadge();
-  }
-
-  /* Init */
-  document.addEventListener('DOMContentLoaded', ()=>{
-    buildCartUI();
-    updateBadge();
-    document.querySelector('#checkout')?.addEventListener('click', checkoutWA);
-  });
   </script>
 </body>
 </html>

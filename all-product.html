@@ -4,289 +4,175 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>All Products – PapaSalad</title>
+
   <!-- template css -->
   <link rel="stylesheet" href="assets/css/plugin.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="icon" type="image/x-icon" href="assets/img/aa.svg">
+
   <!-- shop layer -->
   <link rel="stylesheet" href="assets/css/shop.css">
 </head>
 
-
 <body>
-
   <main>
     <section class="ps-shop">
       <div class="container">
 
         <div class="row">
-
-            <div class="col-lg-7">
-                <div>
-                <h2>Semua Produk</h2>
-                </div>
-                <div class="mb-40">
-                    <p>Klik “Add to cart” untuk menambahkan ke keranjang.</p>
-                </div>
+          <div class="col-lg-7">
+            <div><h2>Semua Produk</h2></div>
+            <div class="mb-40"><p>Klik “Add to cart” untuk menambahkan ke keranjang.</p></div>
+          </div>
+          <div class="col-lg-4 mb-40">
+            <div class="list-social text-lg-right">
+              <ul>
+                <li class="hover-target">
+                  <a href="cart.html" class="ps-badge">Keranjang <span id="cartCount" class="count">0</span></a>
+                </li>
+              </ul>
             </div>
-            <div class="col-lg-4 mb-40">
-                <div class="list-social text-lg-right">
-                    <ul>
-                    <li class="hover-target"><a href="cart.html" class="ps-badge">Keranjang <span id="cartCount" class="count">0</span></a></li>
-                    </ul>
-                </div>
-            </div>
+          </div>
         </div>
 
-    <!-- Product List -->
+        <!-- Product List -->
         <div id="psProducts" class="ps-products">
-            <!-- 1 -->
-            <div class="ps-card">
+          <!-- 1 -->
+          <div class="ps-card">
             <div class="ps-thumb">
-                <img src="assets/img/product/tortilastylesalad.webp" alt="Tortila Style Papa Salad" loading="lazy"
-                    onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
+              <img src="assets/img/product/tortilastylesalad.webp" alt="Tortila Style Papa Salad" loading="lazy"
+                   onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
             </div>
             <div class="ps-body">
-                <h3 class="ps-name">Tortila Style Papa Salad</h3>
-                <div class="ps-price">Rp 20.000</div>
+              <h3 class="ps-name">Tortila Style Papa Salad</h3>
+              <div class="ps-price">Rp 20.000</div>
             </div>
             <div class="ps-actions">
-                <button class="ps-btn"
+              <button class="ps-btn"
                 data-add-cart
                 data-id="tortila"
                 data-name="Tortila Style Papa Salad"
-                data-price="20000">
-                Add to cart
-                </button>
+                data-price="20000">Add to cart</button>
             </div>
-            <div class="ps-cart-shop">
-                <a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a>
-            </div>
-            </div>
+            <div class="ps-cart-shop"><a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a></div>
+          </div>
 
-            <!-- 2 -->
-            <div class="ps-card">
+          <!-- 2 -->
+          <div class="ps-card">
             <div class="ps-thumb">
-                <img src="assets/img/product/caesarsalad.webp" alt="Cesar Salad" loading="lazy"
-                    onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
+              <img src="assets/img/product/caesarsalad.webp" alt="Cesar Salad" loading="lazy"
+                   onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
             </div>
             <div class="ps-body">
-                <h3 class="ps-name">Cesar Salad</h3>
-                <div class="ps-price">Rp 25.000</div>
+              <h3 class="ps-name">Cesar Salad</h3>
+              <div class="ps-price">Rp 25.000</div>
             </div>
             <div class="ps-actions">
-                <button class="ps-btn"
+              <button class="ps-btn"
                 data-add-cart
                 data-id="cesar"
                 data-name="Cesar Salad"
-                data-price="25000">
-                Add to cart
-                </button>
+                data-price="25000">Add to cart</button>
             </div>
-            <div class="ps-cart-shop">
-                <a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a>
-            </div>
-            </div>
+            <div class="ps-cart-shop"><a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a></div>
+          </div>
 
-            <!-- 3 -->
-            <div class="ps-card">
+          <!-- 3 -->
+          <div class="ps-card">
             <div class="ps-thumb">
-                <img src="assets/img/product/thaichickensalad.webp" alt="Thai Chicken Salad" loading="lazy"
-                    onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
+              <img src="assets/img/product/thaichickensalad.webp" alt="Thai Chicken Salad" loading="lazy"
+                   onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
             </div>
             <div class="ps-body">
-                <h3 class="ps-name">Thai Chicken Salad</h3>
-                <div class="ps-price">Rp 28.000</div>
+              <h3 class="ps-name">Thai Chicken Salad</h3>
+              <div class="ps-price">Rp 28.000</div>
             </div>
             <div class="ps-actions">
-                <button class="ps-btn"
+              <button class="ps-btn"
                 data-add-cart
                 data-id="thai"
                 data-name="Thai Chicken Salad"
-                data-price="28000">
-                Add to cart
-                </button>
+                data-price="28000">Add to cart</button>
             </div>
-            <div class="ps-cart-shop">
-                <a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a>
-            </div>
-            </div>
+            <div class="ps-cart-shop"><a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a></div>
+          </div>
 
-            <!-- 4 -->
-            <div class="ps-card">
+          <!-- 4 -->
+          <div class="ps-card">
             <div class="ps-thumb">
-                <img src="assets/img/product/smokedbeefsalad.webp" alt="Smoked Beef Salad" loading="lazy"
-                    onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
+              <img src="assets/img/product/smokedbeefsalad.webp" alt="Smoked Beef Salad" loading="lazy"
+                   onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
             </div>
             <div class="ps-body">
-                <h3 class="ps-name">Smoked Beef Salad</h3>
-                <div class="ps-price">Rp 28.000</div>
+              <h3 class="ps-name">Smoked Beef Salad</h3>
+              <div class="ps-price">Rp 28.000</div>
             </div>
             <div class="ps-actions">
-                <button class="ps-btn"
+              <button class="ps-btn"
                 data-add-cart
                 data-id="smoked"
                 data-name="Smoked Beef Salad"
-                data-price="28000">
-                Add to cart
-                </button>
+                data-price="28000">Add to cart</button>
             </div>
-            <div class="ps-cart-shop">
-                <a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a>
-            </div>
-            </div>
+            <div class="ps-cart-shop"><a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a></div>
+          </div>
 
-            <!-- 5 -->
-            <div class="ps-card">
+          <!-- 5 -->
+          <div class="ps-card">
             <div class="ps-thumb">
-                <img src="assets/img/product/fruithoneyberry.webp" alt="Salad Fruit Honey Berry" loading="lazy"
-                    onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
+              <img src="assets/img/product/fruithoneyberry.webp" alt="Salad Fruit Honey Berry" loading="lazy"
+                   onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
             </div>
             <div class="ps-body">
-                <h3 class="ps-name">Salad Fruit Honey Berry</h3>
-                <div class="ps-price">Rp 28.000</div>
+              <h3 class="ps-name">Salad Fruit Honey Berry</h3>
+              <div class="ps-price">Rp 28.000</div>
             </div>
             <div class="ps-actions">
-                <button class="ps-btn"
+              <button class="ps-btn"
                 data-add-cart
                 data-id="fruit"
                 data-name="Salad Fruit Honey Berry"
-                data-price="28000">
-                Add to cart
-                </button>
+                data-price="28000">Add to cart</button>
             </div>
-            <div class="ps-cart-shop">
-                <a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a>
-            </div>
-            </div>
+            <div class="ps-cart-shop"><a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a></div>
+          </div>
 
-            <!-- 6 -->
-            <div class="ps-card">
+          <!-- 6 -->
+          <div class="ps-card">
             <div class="ps-thumb">
-                <img src="assets/img/product/grilledchickensalad.webp" alt="Grilled Chicken Salad" loading="lazy"
-                    onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
+              <img src="assets/img/product/grilledchickensalad.webp" alt="Grilled Chicken Salad" loading="lazy"
+                   onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
             </div>
             <div class="ps-body">
-                <h3 class="ps-name">Grilled Chicken Salad</h3>
-                <div class="ps-price">Rp 30.000</div>
+              <h3 class="ps-name">Grilled Chicken Salad</h3>
+              <div class="ps-price">Rp 30.000</div>
             </div>
             <div class="ps-actions">
-                <button class="ps-btn"
+              <button class="ps-btn"
                 data-add-cart
                 data-id="grilled"
                 data-name="Grilled Chicken Salad"
-                data-price="30000">
-                Add to cart
-                </button>
+                data-price="30000">Add to cart</button>
             </div>
-            <div class="ps-cart-shop">
-                <a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a>
-            </div>
-            </div>
-
-            
+            <div class="ps-cart-shop"><a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a></div>
+          </div>
         </div>
       </div>
     </section>
-
   </main>
-
-  <!-- Footer -->
-        <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 text-center text-md-left mt-30">
-                        <!-- <div class="mail hover-target">
-                            <a href="#">hello@spiral.design</a>
-                        </div> -->
-                    </div>
-                    <div class="col-md-4 text-center mt-30">
-                        <div class="logo-foot">
-                            <img src="assets/img/logo.png" alt="">
-                            <br><br>
-                            <p style="color: #ffffff;">Aman dikonsumsi anak Kecil,<br>termasuk anak tetangga.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 text-center text-md-right mt-30">
-                        <div class="sosmed">
-                            <ul>
-                                <li><a href="https://www.instagram.com/papasalad.id/" target="_blank">Instagram.</a></li>
-                                <li><a href="https://api.whatsapp.com/send?phone=6285117567544&text=Hallo%20Papa,%20Saya%20mau%20Order%20Salad!" target="_blank">Whatsapp.</a></li>
-                            </ul>
-                        </div>
-                        <div class="copyright">
-                            <p>Mote &copy;2025. All Rights Reserved</p>
-                            <p>Made with ♥</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
   <!-- template js -->
   <script src="assets/js/plugin.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <script>
-  // ===== PapaSalad Cart (localStorage) – no module =====
-  const CART_KEY = 'papasalad_cart_v1';
-
-  function shape(c){ c = c && typeof c==='object' ? c : {};
-    c.items = c.items || {}; c.catalog = c.catalog || {}; return c; }
-  function read(){ try { return shape(JSON.parse(localStorage.getItem(CART_KEY)||'{}')); }
-                   catch(_) { return shape({}); } }
-  function write(c){ localStorage.setItem(CART_KEY, JSON.stringify(shape(c))); }
-
-  function addToCart({id,name,price,qty=1}){
-    const cart = read();
-    cart.items[id] = (cart.items[id] || 0) + qty;
-    cart.catalog[id] = { name, price: Number(price)||0 };
-    write(cart);
-    updateBadge();
-  }
-  function countItems(){
-    const c = read();
-    return Object.values(c.items).reduce((a,b)=>a+b,0);
-  }
-  function updateBadge(){
-    const el = document.querySelector('#cartCount');
-    if (el) el.textContent = countItems();
-  }
-
-  // Intercept tombol Add to cart
-  document.addEventListener('click', (e)=>{
-    const a = e.target.closest('[data-add-cart]');
-    if (!a) return;
-
-    // JS aktif → tambah ke cart, jangan langsung ke WA
-    e.preventDefault();
-    addToCart({
-      id: a.dataset.id,
-      name: a.dataset.name,
-      price: a.dataset.price,
-      qty: 1
+  <!-- HANYA module berikut; tidak ada inline handler lain -->
+  <script type="module">
+    import { bindAddToCart, updateBadge } from './assets/js/shop-cart.js';
+    document.addEventListener('DOMContentLoaded', () => {
+      bindAddToCart();
+      updateBadge('#cartCount');
     });
-
-    // Feedback singkat + redirect ke Cart (opsional)
-    a.textContent = '✓ Added';
-
-  });
-
-  // init badge saat halaman dibuka
-  document.addEventListener('DOMContentLoaded', updateBadge);
-
-</script>
-
-<script type="module">
-  import { bindAddToCart, updateBadge } from './assets/js/shop-cart.js';
-
-  document.addEventListener('DOMContentLoaded', () => {
-    bindAddToCart();   // aktifkan handler add to cart (tanpa redirect)
-    updateBadge('#cartCount'); // sync badge keranjang
-  });
-</script>
-
-
+  </script>
 </body>
 </html>
