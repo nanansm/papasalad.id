@@ -21,12 +21,22 @@ export function bindAddToCart(){
   document.addEventListener('click', (e)=>{
     const btn = e.target.closest('[data-add-cart]');
     if(!btn) return;
-    const id = btn.dataset.id, name = btn.dataset.name, price = Number(btn.dataset.price||0);
-    addToCart({id,name,price,qty:1});
-    btn.textContent='✓ Added';
-    setTimeout(()=>btn.textContent='Add to cart',900);
+
+    // Kalau kebetulan pakai <a>, cegah navigasi.
+    if (btn.tagName === 'A') e.preventDefault();
+
+    const id    = btn.dataset.id;
+    const name  = btn.dataset.name;
+    const price = Number(btn.dataset.price || 0);
+
+    addToCart({ id, name, price, qty: 1 });
+    // Feedback singkat, TANPA redirect.
+    const old = btn.textContent;
+    btn.textContent = '✓ Added';
+    setTimeout(()=> btn.textContent = old, 900);
   });
 }
+
 
 // Render cart page
 export function buildCartUI(rootSel='#cartBox'){

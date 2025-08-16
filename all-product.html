@@ -14,185 +14,177 @@
 </head>
 
 
-<body data-cursor="true">
-  <!-- Header template minimal -->
-   <header>
-        <nav>
-            <!-- Logo -->
-            <div class="logo hover-target">
-                <a class="load-spiral" href="index.html"><img src="assets/img/logo.png" alt="logo" style="max-width: 200%; height: auto;"></a>
+<body>
+
+  <main>
+    <section class="ps-shop">
+      <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-7">
+                <div>
+                <h2>Semua Produk</h2>
+                </div>
+                <div class="mb-40">
+                    <p>Klik “Add to cart” untuk menambahkan ke keranjang.</p>
+                </div>
             </div>
-            <div class="scr socials">
-                <div class="list-social">
+            <div class="col-lg-4 mb-40">
+                <div class="list-social text-lg-right">
                     <ul>
-                        <li class="hover-target"><a href="https://api.whatsapp.com/send?phone=6285117567544&text=Hallo%20Mote,%20Saya%20mau%20ngobrol%20tantang%20Aktivasi%20Digital%20Marketing." target="_blank">Contact Us.</a></li>
-                        <li class="hover-target"><a href="cart.html" class="ps-badge">Keranjang <span id="cartCount" class="count">0</span></a></li>
+                    <li class="hover-target"><a href="cart.html" class="ps-badge">Keranjang <span id="cartCount" class="count">0</span></a></li>
                     </ul>
                 </div>
             </div>
-            <!-- Copyright -->
-            <div class="scr copyright-top">
-                <p>Mote &copy; 2025</p>
-            </div>
-            <div class="bg-nav"></div>
-        </nav>
-    </header>
-
-  <main id="spiral">
-
-    <section class="ps-shop">
-      <div class="container">
-        <div class="centered">
-          <h2>Semua Produk</h2>
         </div>
-        <div class="centered mb-40">
-            <p>Klik “Add to cart” untuk menambahkan ke keranjang.</p>
-        </div>
+
+    <!-- Product List -->
         <div id="psProducts" class="ps-products">
-          <!-- 1 -->
-        <div class="ps-card">
-        <div class="ps-thumb">
-            <img src="assets/img/product/tortilastylesalad.webp" alt="Tortila Style Papa Salad" loading="lazy"
-                onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
-        </div>
-        <div class="ps-body">
-            <h3 class="ps-name">Tortila Style Papa Salad</h3>
-            <div class="ps-price">Rp 20.000</div>
-        </div>
-        <div class="ps-actions">
-            <!-- data-* untuk JS, href WA sebagai fallback -->
-            <a class="ps-btn"
-            data-add-cart
-            data-id="tortila"
-            data-name="Tortila Style Papa Salad"
-            data-price="20000"
-            href="https://wa.me/6285117567544?text=Halo%20Papa!%20Saya%20ingin%20order%20Tortila%20Style%20Papa%20Salad%20(1)%20-%20Rp%2020.000">
-            Add to cart
-            </a>
-        </div>
-        <div class="ps-cart-shop"><a href="cart.html" target="_blank" class="ps-btn ghost">Lihat Cart</a></div>
-        </div>
+            <!-- 1 -->
+            <div class="ps-card">
+            <div class="ps-thumb">
+                <img src="assets/img/product/tortilastylesalad.webp" alt="Tortila Style Papa Salad" loading="lazy"
+                    onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
+            </div>
+            <div class="ps-body">
+                <h3 class="ps-name">Tortila Style Papa Salad</h3>
+                <div class="ps-price">Rp 20.000</div>
+            </div>
+            <div class="ps-actions">
+                <button class="ps-btn"
+                data-add-cart
+                data-id="tortila"
+                data-name="Tortila Style Papa Salad"
+                data-price="20000">
+                Add to cart
+                </button>
+            </div>
+            <div class="ps-cart-shop">
+                <a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a>
+            </div>
+            </div>
 
-        <!-- 2 -->
-        <div class="ps-card">
-        <div class="ps-thumb">
-            <img src="assets/img/product/caesarsalad.webp" alt="Cesar Salad" loading="lazy"
-                onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
-        </div>
-        <div class="ps-body">
-            <h3 class="ps-name">Cesar Salad</h3>
-            <div class="ps-price">Rp 25.000</div>
-        </div>
-        <div class="ps-actions">
-            <!-- data-* untuk JS, href WA sebagai fallback -->
-            <a class="ps-btn"
-            data-add-cart
-            data-id="cesar"
-            data-name="Cesar Salad"
-            data-price="25000"
-            href="https://wa.me/6285117567544?text=Halo%20Papa!%20Saya%20ingin%20order%20Cesar%20Salad%20(1)%20-%20Rp%2025.000">
-            Add to cart
-            </a>
-        </div>
-        <div class="ps-cart-shop"><a href="cart.html" target="_blank" class="ps-btn ghost">Lihat Cart</a></div>
-        </div>
+            <!-- 2 -->
+            <div class="ps-card">
+            <div class="ps-thumb">
+                <img src="assets/img/product/caesarsalad.webp" alt="Cesar Salad" loading="lazy"
+                    onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
+            </div>
+            <div class="ps-body">
+                <h3 class="ps-name">Cesar Salad</h3>
+                <div class="ps-price">Rp 25.000</div>
+            </div>
+            <div class="ps-actions">
+                <button class="ps-btn"
+                data-add-cart
+                data-id="cesar"
+                data-name="Cesar Salad"
+                data-price="25000">
+                Add to cart
+                </button>
+            </div>
+            <div class="ps-cart-shop">
+                <a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a>
+            </div>
+            </div>
 
-        <!-- 3 -->
-        <div class="ps-card">
-        <div class="ps-thumb">
-            <img src="assets/img/product/thaichickensalad.webp" alt="Thai Chicken Salad" loading="lazy"
-                onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
-        </div>
-        <div class="ps-body">
-            <h3 class="ps-name">Thai Chicken Salad</h3>
-            <div class="ps-price">Rp 28.000</div>
-        </div>
-        <div class="ps-actions">
-            <!-- data-* untuk JS, href WA sebagai fallback -->
-            <a class="ps-btn"
-            data-add-cart
-            data-id="thai"
-            data-name="Thai Chicken Salad"
-            data-price="28000"
-            href="https://wa.me/6285117567544?text=Halo%20Papa!%20Saya%20ingin%20order%20Thai%20Chicken%20Salad%20(1)%20-%20Rp%2028.000">
-            Add to cart
-            </a>
-        </div>
-        <div class="ps-cart-shop"><a href="cart.html" target="_blank" class="ps-btn ghost">Lihat Cart</a></div>
-        </div>
+            <!-- 3 -->
+            <div class="ps-card">
+            <div class="ps-thumb">
+                <img src="assets/img/product/thaichickensalad.webp" alt="Thai Chicken Salad" loading="lazy"
+                    onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
+            </div>
+            <div class="ps-body">
+                <h3 class="ps-name">Thai Chicken Salad</h3>
+                <div class="ps-price">Rp 28.000</div>
+            </div>
+            <div class="ps-actions">
+                <button class="ps-btn"
+                data-add-cart
+                data-id="thai"
+                data-name="Thai Chicken Salad"
+                data-price="28000">
+                Add to cart
+                </button>
+            </div>
+            <div class="ps-cart-shop">
+                <a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a>
+            </div>
+            </div>
 
-        <!-- 4 -->
-        <div class="ps-card">
-        <div class="ps-thumb">
-            <img src="assets/img/product/smokedbeefsalad.webp" alt="Smoked Beef Salad" loading="lazy"
-                onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
-        </div>
-        <div class="ps-body">
-            <h3 class="ps-name">Smoked Beef Salad</h3>
-            <div class="ps-price">Rp 28.000</div>
-        </div>
-        <div class="ps-actions">
-            <!-- data-* untuk JS, href WA sebagai fallback -->
-            <a class="ps-btn"
-            data-add-cart
-            data-id="smoked"
-            data-name="Smoked Beef Salad"
-            data-price="28000"
-            href="https://wa.me/6285117567544?text=Halo%20Papa!%20Saya%20ingin%20order%20Smoked%20Beef%20Salad%20(1)%20-%20Rp%2028.000">
-            Add to cart
-            </a>
-        </div>
-        <div class="ps-cart-shop"><a href="cart.html" target="_blank" class="ps-btn ghost">Lihat Cart</a></div>
-        </div>
+            <!-- 4 -->
+            <div class="ps-card">
+            <div class="ps-thumb">
+                <img src="assets/img/product/smokedbeefsalad.webp" alt="Smoked Beef Salad" loading="lazy"
+                    onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
+            </div>
+            <div class="ps-body">
+                <h3 class="ps-name">Smoked Beef Salad</h3>
+                <div class="ps-price">Rp 28.000</div>
+            </div>
+            <div class="ps-actions">
+                <button class="ps-btn"
+                data-add-cart
+                data-id="smoked"
+                data-name="Smoked Beef Salad"
+                data-price="28000">
+                Add to cart
+                </button>
+            </div>
+            <div class="ps-cart-shop">
+                <a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a>
+            </div>
+            </div>
 
-        <!-- 5 -->
-        <div class="ps-card">
-        <div class="ps-thumb">
-            <img src="assets/img/product/fruithoneyberry.webp" alt="Salad Fruit Honey Berry" loading="lazy"
-                onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
-        </div>
-        <div class="ps-body">
-            <h3 class="ps-name">Salad Fruit Honey Berry</h3>
-            <div class="ps-price">Rp 28.000</div>
-        </div>
-        <div class="ps-actions">
-            <!-- data-* untuk JS, href WA sebagai fallback -->
-            <a class="ps-btn"
-            data-add-cart
-            data-id="fruit"
-            data-name="Salad Fruit Honey Berry"
-            data-price="28000"
-            href="https://wa.me/6285117567544?text=Halo%20Papa!%20Saya%20ingin%20order%20Salad%20Fruit%20Honey%20Berry%20(1)%20-%20Rp%2028.000">
-            Add to cart
-            </a>
-        </div>
-        <div class="ps-cart-shop"><a href="cart.html" target="_blank" class="ps-btn ghost">Lihat Cart</a></div>
-        </div>
+            <!-- 5 -->
+            <div class="ps-card">
+            <div class="ps-thumb">
+                <img src="assets/img/product/fruithoneyberry.webp" alt="Salad Fruit Honey Berry" loading="lazy"
+                    onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
+            </div>
+            <div class="ps-body">
+                <h3 class="ps-name">Salad Fruit Honey Berry</h3>
+                <div class="ps-price">Rp 28.000</div>
+            </div>
+            <div class="ps-actions">
+                <button class="ps-btn"
+                data-add-cart
+                data-id="fruit"
+                data-name="Salad Fruit Honey Berry"
+                data-price="28000">
+                Add to cart
+                </button>
+            </div>
+            <div class="ps-cart-shop">
+                <a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a>
+            </div>
+            </div>
 
+            <!-- 6 -->
+            <div class="ps-card">
+            <div class="ps-thumb">
+                <img src="assets/img/product/grilledchickensalad.webp" alt="Grilled Chicken Salad" loading="lazy"
+                    onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
+            </div>
+            <div class="ps-body">
+                <h3 class="ps-name">Grilled Chicken Salad</h3>
+                <div class="ps-price">Rp 30.000</div>
+            </div>
+            <div class="ps-actions">
+                <button class="ps-btn"
+                data-add-cart
+                data-id="grilled"
+                data-name="Grilled Chicken Salad"
+                data-price="30000">
+                Add to cart
+                </button>
+            </div>
+            <div class="ps-cart-shop">
+                <a href="cart.html" class="ps-btn ghost" target="_blank">Lihat Cart</a>
+            </div>
+            </div>
 
-          <!-- 6 -->
-          <div class="ps-card">
-                <div class="ps-thumb">
-                    <img src="assets/img/product/grilledchickensalad.webp" alt="Grilled Chicken Salad" loading="lazy"
-                        onerror="this.onerror=null;this.src='assets/img/product/_placeholder.jpg'">
-                </div>
-                <div class="ps-body">
-                    <h3 class="ps-name">Grilled Chicken Salad</h3>
-                    <div class="ps-price">Rp 30.000</div>
-                </div>
-                <div class="ps-actions">
-                    <!-- data-* untuk JS, href WA sebagai fallback -->
-                    <a class="ps-btn"
-                    data-add-cart
-                    data-id="grilled"
-                    data-name="Grilled Chicken Salad"
-                    data-price="30000"
-                    href="https://wa.me/6285117567544?text=Halo%20Papa!%20Saya%20ingin%20order%20Grilled%20Chicken%20Salad%20(1)%20-%20Rp%2030.000">
-                    Add to cart
-                    </a>
-                </div>
-                <div class="ps-cart-shop"><a href="cart.html" target="_blank" class="ps-btn ghost">Lihat Cart</a></div>
-         </div>
             
         </div>
       </div>
@@ -278,12 +270,23 @@
 
     // Feedback singkat + redirect ke Cart (opsional)
     a.textContent = '✓ Added';
-    setTimeout(()=> { window.location.href = 'cart.html'; }, 300);
+
   });
 
   // init badge saat halaman dibuka
   document.addEventListener('DOMContentLoaded', updateBadge);
+
 </script>
+
+<script type="module">
+  import { bindAddToCart, updateBadge } from './assets/js/shop-cart.js';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    bindAddToCart();   // aktifkan handler add to cart (tanpa redirect)
+    updateBadge('#cartCount'); // sync badge keranjang
+  });
+</script>
+
 
 </body>
 </html>
