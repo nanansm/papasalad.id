@@ -153,20 +153,23 @@ export async function checkoutWA({
 
   // 2) Logging ke Sheet: non-blocking
   if (sheetUrl){
-    const payload = {
-      token, // <— kirim token di sini
-      name, phone, notes, method,
-      items, subtotal: sub,
-      meta: { ua: navigator.userAgent, ref: document.referrer }
-    };
-    try{
-      if (navigator.sendBeacon){
-        const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
-        navigator.sendBeacon(sheetUrl, blob);
-      } else {
-        fetch(sheetUrl, { method:'POST', mode:'no-cors', body: JSON.stringify(payload) });
-      }
-    }catch(e){ console.warn('Sheet logging failed:', e); }
+  const payload = {
+    token, // "PAPASALAD_SECRET_123"
+    name, phone, notes, method,
+    items, subtotal: sub,
+    meta: { ua: navigator.userAgent, ref: document.referrer }
+  };
+  try {
+    fetch(sheetUrl, {
+      method:'POST',
+      headers: { 'Content-Type':'application/json' },
+      body: JSON.stringify(payload)
+    });
+  } catch(e){
+    console.warn('Sheet logging failed:', e);
   }
+}
+
+
 }
 
