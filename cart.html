@@ -14,28 +14,22 @@
 <body data-cursor="true">
 
   <header>
-        <nav>
-            <!-- Logo -->
-            <div class="logo hover-target">
-                <a class="load-spiral" href="index.html"><img src="assets/img/logo.png" alt="logo" style="max-width: 200%; height: auto;"></a>
-            </div>
-            <div class="scr socials">
-                <div class="list-social">
-                    <ul>
-                        <li class="hover-target"><a href="https://api.whatsapp.com/send?phone=6285117567544&text=Hallo%20Mote,%20Saya%20mau%20ngobrol%20tantang%20Aktivasi%20Digital%20Marketing." target="_blank">Contact Us.</a></li>
-                        <li class="hover-target"><a href="cart.html" class="ps-badge">Keranjang <span id="cartCount" class="count">0</span></a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Copyright -->
-            <div class="scr copyright-top">
-                <p>Mote &copy; 2025</p>
-            </div>
-
-            <div class="bg-nav"></div>
-        </nav>
-    </header>
+    <nav>
+      <div class="logo hover-target">
+        <a class="load-spiral" href="index.html"><img src="assets/img/logo.png" alt="logo" style="max-width:200%;height:auto;"></a>
+      </div>
+      <div class="scr socials">
+        <div class="list-social">
+          <ul>
+            <li class="hover-target"><a href="https://api.whatsapp.com/send?phone=6285117567544&text=Hallo%20Mote,%20Saya%20mau%20ngobrol%20tantang%20Aktivasi%20Digital%20Marketing." target="_blank">Contact Us.</a></li>
+            <li class="hover-target"><a href="cart.html" class="ps-badge">Keranjang <span id="cartCount" class="count">0</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="scr copyright-top"><p>Mote &copy; 2025</p></div>
+      <div class="bg-nav"></div>
+    </nav>
+  </header>
 
   <main id="spiral">
     <section class="ps-shop">
@@ -48,30 +42,28 @@
         <div id="cartBox" class="ps-cart"></div>
 
         <div class="ps-summary">
-          <div class="row"><span>Subtotal</span><strong id="subtotal">Rp0</strong></div>
-          <div class="row"><span>Total</span><strong id="total">Rp0</strong></div>
+          <div class="row"><span>Subtotal</span><strong id="subtotal">Rp 0</strong></div>
+          <div class="row"><span>Total</span><strong id="total">Rp 0</strong></div>
         </div>
 
-        <div class="ps-head" style="margin-top:16px">
-          <h3>Data Pemesan</h3>
-        </div>
-        <div class="row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;padding: 15px;">
+        <div class="ps-head" style="margin-top:16px"><h3>Data Pemesan</h3></div>
+        <div class="row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:15px;">
           <div>
             <label class="ps-note">Nama</label>
-            <input id="custName" placeholder="Nama Kamu">
+            <input id="custName" placeholder="Nama Kamu" required>
           </div>
           <div>
             <label class="ps-note">No WhatsApp</label>
-            <input id="custPhone" placeholder="08xxxxxxxxxx">
+            <input id="custPhone" placeholder="08xxxxxxxxxx" required>
           </div>
           <div style="grid-column:1/-1">
             <label class="ps-note">Alamat/Catatan</label>
-            <textarea id="notes" rows="3" placeholder="Alamat lengkap / catatan pesanan"></textarea>
+            <textarea id="notes" rows="3" placeholder="Alamat lengkap / catatan pesanan" required></textarea>
           </div>
         </div>
 
         <button id="checkout" class="ps-btn" style="margin-top:16px">Checkout via WhatsApp</button>
-        <p class="ps-note" style="margin-top:8px">Nomor WhatsApp & Google Sheet endpoint disetel di skrip halaman ini.</p>
+        <p class="ps-note" style="margin-top:8px">Cek Lagi ya biar Papa gak salah kirim ke alamat Kamu!</p>
       </div>
     </section>
   </main>
@@ -80,22 +72,22 @@
   <script src="assets/js/plugin.js"></script>
   <script src="assets/js/main.js"></script>
 
-<script>
-  /* ===== PapaSalad Cart Page ===== */
-  const CART_KEY = 'papasalad_cart_v1';
-  const WA_NUMBER = '6285117567544'; // GANTI ke nomor WA bisnis (tanpa +)
+  <script>
+  /* ================= PapaSalad Cart Page ================= */
+  const CART_KEY  = 'papasalad_cart_v1';
+  const WA_NUMBER = '6285117567544'; // nomor WA bisnis (tanpa +)
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxc1kDNXJFwJ5RbOAf_IvS2SBTVrNTDCuWr1Xn44Y4L-7q0weiczTSu5zjEpief70-1gg/exec';
+  const TOKEN     = 'AKfycbxc1kDNXJFwJ5RbOAf_IvS2SBTVrNTDCuWr1Xn44Y4L-7q0weiczTSu5zjEpief70-1gg';
 
-  // Helpers
-  const shape = c => { c = c && typeof c==='object' ? c : {};
-    c.items=c.items||{}; c.catalog=c.catalog||{}; return c; };
-  const read = () => { try { return shape(JSON.parse(localStorage.getItem(CART_KEY)||'{}')); }
-                       catch(_) { return shape({}); } };
+  /* Helpers */
+  const shape = c => { c = c && typeof c==='object' ? c : {}; c.items=c.items||{}; c.catalog=c.catalog||{}; return c; };
+  const read  = () => { try { return shape(JSON.parse(localStorage.getItem(CART_KEY)||'{}')); } catch(_) { return shape({}); } };
   const write = c => localStorage.setItem(CART_KEY, JSON.stringify(shape(c)));
-  const idr = n => 'Rp ' + (Number(n)||0).toLocaleString('id-ID');
+  const idr   = n => 'Rp ' + (Number(n)||0).toLocaleString('id-ID');
   const countItems = () => Object.values(read().items).reduce((a,b)=>a+b,0);
-  const updateBadge  = () => { const el=document.querySelector('#cartCount'); if(el) el.textContent=countItems(); };
+  const updateBadge = () => { const el=document.querySelector('#cartCount'); if(el) el.textContent = countItems(); };
 
-  // Build UI
+  /* Render Cart */
   function buildCartUI(){
     const root = document.querySelector('#cartBox');
     const subEl = document.querySelector('#subtotal');
@@ -140,11 +132,11 @@
     });
 
     if (subEl) subEl.textContent = idr(subtotal);
-    if (totEl) totEl.textContent = idr(subtotal); // belum menghitung ongkir/pajak
+    if (totEl) totEl.textContent = idr(subtotal);
     updateBadge();
   }
 
-  // Qty +/−, hapus, input manual
+  /* Qty +/−, hapus, input manual */
   document.addEventListener('click', (e)=>{
     const inc = e.target.closest('.inc')?.dataset.id;
     const dec = e.target.closest('.dec')?.dataset.id;
@@ -168,43 +160,76 @@
     buildCartUI();
   });
 
-  // Checkout to WhatsApp
-  function checkoutWA(){
+  /* Checkout → Google Sheet → WhatsApp */
+  async function checkoutWA(){
     const cart = read();
     const ids = Object.keys(cart.items);
     if (!ids.length){ alert('Keranjang kosong'); return; }
 
-    const name   = (document.querySelector('#custName') ?.value || '').trim() || '-';
-    const phone  = (document.querySelector('#custPhone')?.value || '').trim() || '-';
-    const notes  = (document.querySelector('#notes')    ?.value || '').trim() || '-';
+    const name  = (document.querySelector('#custName') ?.value || '').trim();
+    const phone = (document.querySelector('#custPhone')?.value || '').trim();
+    const notes = (document.querySelector('#notes')    ?.value || '').trim();
 
-    let rows = []; let sub = 0;
+    if (!name){  alert('Harap isi Nama terlebih dahulu.'); return; }
+    if (!phone){ alert('Harap isi No WhatsApp terlebih dahulu.'); return; }
+    if (!notes){ alert('Harap isi Alamat/Catatan terlebih dahulu.'); return; }
+
+    // items & subtotal
+    let rows = []; let sub = 0; const items = [];
     ids.forEach(id=>{
       const q = cart.items[id];
       const m = cart.catalog[id] || {name:id, price:0};
-      const line = q * (m.price||0); sub += line;
-      rows.push(`• ${m.name} x${q} @ ${idr(m.price)} = ${idr(line)}`);
+      const price = Number(m.price)||0;
+      const line  = q * price; sub += line;
+      rows.push(`• ${m.name} x${q} @ ${idr(price)} = ${idr(line)}`);
+      items.push({ id, name: m.name, qty: q, price });
     });
 
-    const text = `Halo PapaSalad! Saya mau pesan:%0A%0A${rows.join('%0A')}` +
-                 `%0A%0ASubtotal: ${idr(sub)}` +
-                 `%0ANama: ${encodeURIComponent(name)}` +
-                 `%0AWhatsapp: ${encodeURIComponent(phone)}` +
-                 `%0AAlamat/Catatan: ${encodeURIComponent(notes)}` +
-                 `%0A%0ATerima kasih!`;
+    // payload utk Apps Script
+    const payload = {
+      token: TOKEN,
+      name, phone, notes,
+      method: 'Web',
+      items, subtotal: sub,
+      meta: { ua: navigator.userAgent, ref: document.referrer }
+    };
 
+    // kirim ke Sheet (kalau gagal, tetap lanjut WA)
+    try{
+  await fetch(SHEET_URL, {
+    method: 'POST',
+    mode: 'no-cors',        // <— penting utk bypass preflight
+    cache: 'no-cache',
+    redirect: 'follow',
+    // JANGAN kirim header application/json agar tidak memicu preflight
+    body: JSON.stringify(payload)
+  });
+} catch(err){
+  console.warn('Logging ke Sheet gagal:', err);
+}
+
+
+    // buka WhatsApp
+    const text = `Halo PapaSalad! Saya mau pesan:%0A%0A${rows.join('%0A')}`
+               + `%0A%0ASubtotal: ${idr(sub)}`
+               + `%0A%0ANama: ${encodeURIComponent(name)}`
+               + `%0AWhatsapp: ${encodeURIComponent(phone)}`
+               + `%0AAlamat/Catatan: ${encodeURIComponent(notes)}`
+               + `%0A%0ATerima kasih!`;
     const url = `https://wa.me/${WA_NUMBER}?text=${text}`;
     window.open(url, '_blank');
+
+    // (opsional) kosongkan cart setelah checkout
+    // localStorage.removeItem(CART_KEY);
+    // buildCartUI(); updateBadge();
   }
 
-  // Init
+  /* Init */
   document.addEventListener('DOMContentLoaded', ()=>{
     buildCartUI();
     updateBadge();
-    const btn = document.querySelector('#checkout');
-    if (btn) btn.addEventListener('click', checkoutWA);
+    document.querySelector('#checkout')?.addEventListener('click', checkoutWA);
   });
-</script>
-
+  </script>
 </body>
 </html>
