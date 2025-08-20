@@ -29,199 +29,199 @@ Author              : EsensiFiksi
 /* Google Font */
 /* poppins-100 - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: normal;
   font-weight: 100;
   src: url("../fonts/poppins/poppins-v5-latin-100.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display Thin"), local("Red Hat Display-Thin"), url("../fonts/poppins/poppins-v5-latin-100.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-100.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-100.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-100.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-100.svg#Red Hat Display") format("svg");
+  src: local("DM Sans Thin"), local("DM Sans-Thin"), url("../fonts/poppins/poppins-v5-latin-100.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-100.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-100.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-100.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-100.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
 /* poppins-100italic - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: italic;
   font-weight: 100;
   src: url("../fonts/poppins/poppins-v5-latin-100italic.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display Thin Italic"), local("Red Hat Display-ThinItalic"), url("../fonts/poppins/poppins-v5-latin-100italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-100italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-100italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-100italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-100italic.svg#Red Hat Display") format("svg");
+  src: local("DM Sans Thin Italic"), local("DM Sans-ThinItalic"), url("../fonts/poppins/poppins-v5-latin-100italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-100italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-100italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-100italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-100italic.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
 /* poppins-200 - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: normal;
   font-weight: 200;
   src: url("../fonts/poppins/poppins-v5-latin-200.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display ExtraLight"), local("Red Hat Display-ExtraLight"), url("../fonts/poppins/poppins-v5-latin-200.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-200.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-200.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-200.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-200.svg#Red Hat Display") format("svg");
+  src: local("DM Sans ExtraLight"), local("DM Sans-ExtraLight"), url("../fonts/poppins/poppins-v5-latin-200.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-200.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-200.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-200.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-200.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
 /* poppins-300italic - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: italic;
   font-weight: 300;
   src: url("../fonts/poppins/poppins-v5-latin-300italic.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display Light Italic"), local("Red Hat Display-LightItalic"), url("../fonts/poppins/poppins-v5-latin-300italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-300italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-300italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-300italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-300italic.svg#Red Hat Display") format("svg");
+  src: local("DM Sans Light Italic"), local("DM Sans-LightItalic"), url("../fonts/poppins/poppins-v5-latin-300italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-300italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-300italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-300italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-300italic.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
 /* poppins-300 - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: normal;
   font-weight: 300;
   src: url("../fonts/poppins/poppins-v5-latin-300.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display Light"), local("Red Hat Display-Light"), url("../fonts/poppins/poppins-v5-latin-300.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-300.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-300.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-300.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-300.svg#Red Hat Display") format("svg");
+  src: local("DM Sans Light"), local("DM Sans-Light"), url("../fonts/poppins/poppins-v5-latin-300.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-300.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-300.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-300.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-300.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
 /* poppins-regular - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
   src: url("../fonts/poppins/poppins-v5-latin-regular.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display Regular"), local("Red Hat Display-Regular"), url("../fonts/poppins/poppins-v5-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-regular.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-regular.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-regular.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-regular.svg#Red Hat Display") format("svg");
+  src: local("DM Sans Regular"), local("DM Sans-Regular"), url("../fonts/poppins/poppins-v5-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-regular.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-regular.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-regular.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-regular.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
 /* poppins-italic - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: italic;
   font-weight: 400;
   src: url("../fonts/poppins/poppins-v5-latin-italic.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display Italic"), local("Red Hat Display-Italic"), url("../fonts/poppins/poppins-v5-latin-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-italic.svg#Red Hat Display") format("svg");
+  src: local("DM Sans Italic"), local("DM Sans-Italic"), url("../fonts/poppins/poppins-v5-latin-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-italic.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
 /* poppins-200italic - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: italic;
   font-weight: 200;
   src: url("../fonts/poppins/poppins-v5-latin-200italic.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display ExtraLight Italic"), local("Red Hat Display-ExtraLightItalic"), url("../fonts/poppins/poppins-v5-latin-200italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-200italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-200italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-200italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-200italic.svg#Red Hat Display") format("svg");
+  src: local("DM Sans ExtraLight Italic"), local("DM Sans-ExtraLightItalic"), url("../fonts/poppins/poppins-v5-latin-200italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-200italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-200italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-200italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-200italic.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
 /* poppins-500 - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: normal;
   font-weight: 500;
   src: url("../fonts/poppins/poppins-v5-latin-500.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display Medium"), local("Red Hat Display-Medium"), url("../fonts/poppins/poppins-v5-latin-500.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-500.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-500.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-500.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-500.svg#Red Hat Display") format("svg");
+  src: local("DM Sans Medium"), local("DM Sans-Medium"), url("../fonts/poppins/poppins-v5-latin-500.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-500.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-500.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-500.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-500.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
 /* poppins-500italic - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: italic;
   font-weight: 500;
   src: url("../fonts/poppins/poppins-v5-latin-500italic.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display Medium Italic"), local("Red Hat Display-MediumItalic"), url("../fonts/poppins/poppins-v5-latin-500italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-500italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-500italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-500italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-500italic.svg#Red Hat Display") format("svg");
+  src: local("DM Sans Medium Italic"), local("DM Sans-MediumItalic"), url("../fonts/poppins/poppins-v5-latin-500italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-500italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-500italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-500italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-500italic.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
 /* poppins-600italic - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: italic;
   font-weight: 600;
   src: url("../fonts/poppins/poppins-v5-latin-600italic.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display SemiBold Italic"), local("Red Hat Display-SemiBoldItalic"), url("../fonts/poppins/poppins-v5-latin-600italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-600italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-600italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-600italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-600italic.svg#Red Hat Display") format("svg");
+  src: local("DM Sans SemiBold Italic"), local("DM Sans-SemiBoldItalic"), url("../fonts/poppins/poppins-v5-latin-600italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-600italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-600italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-600italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-600italic.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
 /* poppins-600 - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: normal;
   font-weight: 600;
   src: url("../fonts/poppins/poppins-v5-latin-600.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display SemiBold"), local("Red Hat Display-SemiBold"), url("../fonts/poppins/poppins-v5-latin-600.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-600.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-600.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-600.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-600.svg#Red Hat Display") format("svg");
+  src: local("DM Sans SemiBold"), local("DM Sans-SemiBold"), url("../fonts/poppins/poppins-v5-latin-600.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-600.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-600.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-600.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-600.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
 /* poppins-700 - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: normal;
   font-weight: 700;
   src: url("../fonts/poppins/poppins-v5-latin-700.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display Bold"), local("Red Hat Display-Bold"), url("../fonts/poppins/poppins-v5-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-700.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-700.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-700.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-700.svg#Red Hat Display") format("svg");
+  src: local("DM Sans Bold"), local("DM Sans-Bold"), url("../fonts/poppins/poppins-v5-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-700.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-700.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-700.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-700.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
 /* poppins-700italic - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: italic;
   font-weight: 700;
   src: url("../fonts/poppins/poppins-v5-latin-700italic.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display Bold Italic"), local("Red Hat Display-BoldItalic"), url("../fonts/poppins/poppins-v5-latin-700italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-700italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-700italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-700italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-700italic.svg#Red Hat Display") format("svg");
+  src: local("DM Sans Bold Italic"), local("DM Sans-BoldItalic"), url("../fonts/poppins/poppins-v5-latin-700italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-700italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-700italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-700italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-700italic.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
 /* poppins-800 - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: normal;
   font-weight: 800;
   src: url("../fonts/poppins/poppins-v5-latin-800.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display ExtraBold"), local("Red Hat Display-ExtraBold"), url("../fonts/poppins/poppins-v5-latin-800.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-800.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-800.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-800.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-800.svg#Red Hat Display") format("svg");
+  src: local("DM Sans ExtraBold"), local("DM Sans-ExtraBold"), url("../fonts/poppins/poppins-v5-latin-800.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-800.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-800.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-800.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-800.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
 /* poppins-800italic - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: italic;
   font-weight: 800;
   src: url("../fonts/poppins/poppins-v5-latin-800italic.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display ExtraBold Italic"), local("Red Hat Display-ExtraBoldItalic"), url("../fonts/poppins/poppins-v5-latin-800italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-800italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-800italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-800italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-800italic.svg#Red Hat Display") format("svg");
+  src: local("DM Sans ExtraBold Italic"), local("DM Sans-ExtraBoldItalic"), url("../fonts/poppins/poppins-v5-latin-800italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-800italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-800italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-800italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-800italic.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
 /* poppins-900 - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: normal;
   font-weight: 900;
   src: url("../fonts/poppins/poppins-v5-latin-900.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display Black"), local("Red Hat Display-Black"), url("../fonts/poppins/poppins-v5-latin-900.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-900.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-900.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-900.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-900.svg#Red Hat Display") format("svg");
+  src: local("DM Sans Black"), local("DM Sans-Black"), url("../fonts/poppins/poppins-v5-latin-900.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-900.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-900.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-900.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-900.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
 /* poppins-900italic - latin */
 @font-face {
-  font-family: 'Red Hat Display';
+  font-family: 'DM Sans';
   font-style: italic;
   font-weight: 900;
   src: url("../fonts/poppins/poppins-v5-latin-900italic.eot");
   /* IE9 Compat Modes */
-  src: local("Red Hat Display Black Italic"), local("Red Hat Display-BlackItalic"), url("../fonts/poppins/poppins-v5-latin-900italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-900italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-900italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-900italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-900italic.svg#Red Hat Display") format("svg");
+  src: local("DM Sans Black Italic"), local("DM Sans-BlackItalic"), url("../fonts/poppins/poppins-v5-latin-900italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-900italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-900italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-900italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-900italic.svg#DM Sans") format("svg");
   /* Legacy iOS */
 }
 
@@ -229,11 +229,11 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 h5 {
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 20px;
   color: #000;
   line-height: 25px;
@@ -241,7 +241,7 @@ h5 {
 }
 
 p {
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 15px;
   color: #000;
   line-height: 25px;
@@ -333,7 +333,7 @@ a:hover {
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .centered {
@@ -665,7 +665,7 @@ ul {
 }
 
 a.menu-link {
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   display: inline-block;
   text-decoration: none;
   color: transparent;
@@ -881,7 +881,7 @@ a {
 }
 
 .heading-text-front h1 {
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   text-transform: uppercase;
   color: transparent;
   font-weight: 400;
@@ -905,7 +905,7 @@ a {
 }
 
 .heading-text-back h1 {
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   text-transform: uppercase;
   color: #ffffff;
   font-weight: 700;
@@ -963,14 +963,14 @@ h1.title {
   text-transform: uppercase;
   color: #000;
   font-size: 60px;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 900;
 }
 
 .main-title h2 span {
   -webkit-text-stroke: 1px #E3E1C9;
   color: transparent;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 900;
 }
 
@@ -1004,7 +1004,7 @@ h1.title {
 
 .folio-content .folio-item .text-folio h2.text-1 {
   position: absolute;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   color: transparent;
   font-weight: 900;
   font-size: 40px;
@@ -1022,7 +1022,7 @@ h1.title {
 
 .folio-content .folio-item .text-folio h2.text-2 {
   position: absolute;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   color: #000;
   font-weight: 900;
   font-size: 40px;
@@ -1079,7 +1079,7 @@ h1.title {
 }
 
 .about-text h3 {
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   margin-bottom: 20px;
   color: #000;
   font-weight: 400;
@@ -1220,12 +1220,12 @@ h1.title {
 
 .service-text h2 {
   color: #E3E1C9;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .service-text h3 {
   color: #E3E1C9;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   text-align: left;
   font-size: 20px;
   font-weight: 700;
@@ -1683,7 +1683,7 @@ h3.detail-title {
 
 .text-slide h2.text-1 {
   position: absolute;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   color: transparent;
   font-weight: 900;
   font-size: 60px;
@@ -1695,7 +1695,7 @@ h3.detail-title {
 
 .text-slide h2.text-2 {
   position: absolute;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   color: #000;
   font-weight: 900;
   font-size: 60px;
